@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://doqfhommwyqhc"]
+
+[ext_resource type="SpriteFrames" uid="uid://dntedxlvne5cs" path="res://Resources/bridge.tres" id="1_3mp33"]
+[ext_resource type="Script" uid="uid://dpwb831u5b53w" path="res://Scripts/bridge.gd" id="1_h1rw7"]
+[ext_resource type="AudioStream" uid="uid://d33f6bqkt3l6h" path="res://Assets/Sounds/bomb_explosion.wav" id="3_jy1u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mp33"]
+size = Vector2(191, 30)
+
+[node name="Bridge" type="Area2D"]
+collision_layer = 32
+collision_mask = 5
+script = ExtResource("1_h1rw7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_3mp33")
+animation = &"explode"
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 0)
+sprite_frames = ExtResource("1_3mp33")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 0)
+sprite_frames = ExtResource("1_3mp33")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-47, 0)
+sprite_frames = ExtResource("1_3mp33")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.5, 0)
+shape = SubResource("RectangleShape2D_3mp33")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jy1u5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

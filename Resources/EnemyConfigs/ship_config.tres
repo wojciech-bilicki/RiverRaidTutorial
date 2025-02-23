@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyConfig" load_steps=3 format=3 uid="uid://bid2ambjd8slh"]
+
+[ext_resource type="Shape2D" uid="uid://lms4cb5o2asu" path="res://Resources/CollisionShapes/CS_ship.tres" id="1_c451a"]
+[ext_resource type="Script" uid="uid://b2keqe56n3i0s" path="res://Scripts/enemy_config.gd" id="2_ts8yd"]
+
+[resource]
+script = ExtResource("2_ts8yd")
+enemy_collision_shape = ExtResource("1_c451a")
+enemy_type = "ship"
+explosion_color = Color(0.52396, 0.178713, 0, 1)
+speed = 80.0
+points = 100

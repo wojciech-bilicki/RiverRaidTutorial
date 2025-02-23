@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3tvwdo71lftw"]
+
+[ext_resource type="Texture2D" uid="uid://c2a8oh8ygvt0l" path="res://Assets/Fuel-Meter.png" id="1_jxero"]
+[ext_resource type="Script" uid="uid://cx783knysxxar" path="res://Scripts/ui.gd" id="1_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://dlec6i5v12b2t" path="res://Assets/Fuel-Indicator.png" id="2_qdvrb"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_nf4gj")
+
+[node name="ControlPanelRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 58)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[node name="LifesLabel" type="Label" parent="ControlPanelRect"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 17.0
+offset_right = 331.0
+offset_bottom = 40.0
+text = "Lifes: 3"
+
+[node name="PointsLabel" type="Label" parent="ControlPanelRect"]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 15.0
+offset_right = 933.0
+offset_bottom = 38.0
+text = "Points: 0"
+
+[node name="PowerMeter" type="TextureRect" parent="ControlPanelRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -50.0
+offset_right = 89.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_jxero")
+expand_mode = 1
+
+[node name="PowerIndicator" type="TextureRect" parent="ControlPanelRect"]
+layout_mode = 0
+offset_left = 639.0
+offset_top = 25.0
+offset_right = 644.0
+offset_bottom = 45.0
+texture = ExtResource("2_qdvrb")
+expand_mode = 1
+
+[node name="GameOverView" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverView"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameOverView/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "GAME OVER"
